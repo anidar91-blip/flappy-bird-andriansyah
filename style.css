@@ -1,0 +1,49 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#118de0;--cyan:#24c8f5;--yellow:#ffd52e;--orange:#ff9418;--green:#20b86a}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#081426;color:#13233a}
+button,input{font:inherit}
+button{cursor:pointer}
+#app{position:relative;width:min(440px,100vw);height:min(820px,100vh);margin:auto;overflow:hidden;background:#22c5f2;box-shadow:0 0 60px #0008}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.screen{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px}
+.overlay{background:linear-gradient(#061a3855,#061a38aa);backdrop-filter:blur(5px)}
+.hidden{display:none!important}
+.brand{text-align:center;color:white;filter:drop-shadow(0 8px 8px #003d5c55);animation:float 2.7s ease-in-out infinite}
+.bird-logo{font-size:78px;line-height:1;animation:wing .7s ease-in-out infinite alternate}
+.title{font-size:55px;font-weight:1000;line-height:.85;letter-spacing:-3px;text-shadow:0 5px #07599c,0 9px 18px #003c6b66}
+.title span{display:block;color:#ffd42d;text-shadow:0 5px #bd6500,0 9px 18px #003c6b66}
+.tagline{margin-top:14px;font-size:12px;font-weight:900;letter-spacing:4px}
+.card{background:#fffffff2;border:1px solid #ffffffaa;border-radius:26px;padding:24px;box-shadow:0 20px 50px #00284d55}
+.home-card{width:min(340px,92vw);margin-top:28px}
+.home-card label{display:block;text-align:center;font-size:11px;font-weight:900;letter-spacing:1.5px;color:#617084;margin-bottom:8px}
+input{width:100%;height:52px;border:2px solid #dbe8f4;border-radius:16px;padding:0 16px;outline:0;text-align:center;font-weight:800;color:#18314e;background:#f8fbff;margin-bottom:13px}
+input:focus{border-color:#25b7ef;box-shadow:0 0 0 4px #25b7ef22}
+.btn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-top:10px;font-weight:1000;color:white;box-shadow:0 5px 0 #0002,0 8px 18px #003b5b22;transition:.12s transform,.12s filter}
+.btn:active{transform:translateY(4px);filter:brightness(.96);box-shadow:0 1px 0 #0002}
+.primary{background:linear-gradient(#ffd93e,#ff9b16);box-shadow:0 5px #c66a00,0 9px 20px #a64d002e}
+.blue{background:linear-gradient(#48c9ff,#1486df);box-shadow:0 5px #075eaa,0 9px 20px #075eaa22}
+.green{background:linear-gradient(#65e89a,#18ad63);box-shadow:0 5px #087540,0 9px 20px #08754022}
+.danger{background:linear-gradient(#ff7777,#e33d3d);box-shadow:0 5px #9d2020,0 9px 20px #9d202022}
+.two-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px}.two-buttons .btn{font-size:12px}
+.credit{position:absolute;bottom:15px;color:#ffffffdd;font-size:11px;font-weight:800}
+.hud{position:absolute;inset:0;z-index:5;pointer-events:none}
+.score-wrap{position:absolute;top:18px;left:50%;transform:translateX(-50%);text-align:center;color:white;text-shadow:0 3px 5px #00385c99}
+.score-wrap small{display:block;font-size:11px;font-weight:1000;letter-spacing:2px}.score-wrap strong{font-size:58px;line-height:.95;font-weight:1000}
+.icon-btn{pointer-events:auto;position:absolute;right:15px;top:15px;width:48px;height:48px;border:0;border-radius:15px;background:#fffffff2;color:#15466d;font-weight:1000;font-size:21px;box-shadow:0 5px 15px #003b5b44}
+.dialog{width:min(350px,92vw);text-align:center}
+.dialog h2{font-size:29px;color:#1769a5;font-weight:1000;margin-bottom:12px}
+.dialog p{color:#607086;margin-bottom:15px;font-weight:700}
+.over-title{font-size:43px;font-weight:1000;color:#ff7b18;text-shadow:0 4px #b74700;margin-bottom:8px}
+.muted{font-weight:900;color:#657488;margin-bottom:15px}
+.results{display:grid;grid-template-columns:1fr 1fr;background:#edf7ff;border-radius:17px;padding:14px;margin-bottom:12px}
+.results div+div{border-left:1px solid #cfdfed}
+.results small{display:block;font-size:10px;color:#708097;font-weight:1000;letter-spacing:1px}.results strong{display:block;font-size:34px;color:#1769a5}
+.medal{min-height:30px;font-size:14px;font-weight:900;color:#d77a00}
+.leaderboard{max-height:82vh;overflow:auto}.leaderboard h2{margin-bottom:15px}
+.row{display:grid;grid-template-columns:42px 1fr 60px;align-items:center;gap:7px;background:#f2f8fd;border-radius:12px;padding:10px;margin:5px 0;text-align:left;font-weight:900}
+.row:first-child{background:#fff1a8}.rank{text-align:center}.points{text-align:right;color:#146da9}
+.instructions{text-align:left;background:#f2f8fd;border-radius:16px;padding:15px;color:#3f536b;font-size:14px;line-height:2;font-weight:700}
+.toast{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);z-index:50;background:#071d34e8;color:white;padding:11px 16px;border-radius:999px;font-size:12px;font-weight:900;box-shadow:0 7px 20px #0005}
+@keyframes float{50%{transform:translateY(-8px)}}@keyframes wing{to{transform:rotate(4deg) translateY(4px)}}
+@media(max-height:650px){.title{font-size:42px}.bird-logo{font-size:56px}.home-card{margin-top:14px}.card{padding:18px}}

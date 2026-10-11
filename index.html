@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#19bff2">
+  <title>Flappy Bird Modern</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="Game Flappy Bird"></canvas>
+
+    <section id="home" class="screen">
+      <div class="brand">
+        <div class="bird-logo">🐤</div>
+        <div class="title">FLAPPY <span>BIRD</span></div>
+        <div class="tagline">FLY • AVOID • SCORE</div>
+      </div>
+
+      <div class="card home-card">
+        <label for="playerName">NAMA PEMAIN</label>
+        <input id="playerName" maxlength="18" placeholder="Masukkan nama..." autocomplete="off">
+        <button id="playBtn" class="btn primary">▶ MULAI BERMAIN</button>
+        <div class="two-buttons">
+          <button id="leaderBtn" class="btn blue">🏆 LEADERBOARD</button>
+          <button id="howBtn" class="btn green">❓ CARA MAIN</button>
+        </div>
+      </div>
+      <div class="credit">Made with ❤️ by Andriansyah</div>
+    </section>
+
+    <section id="hud" class="hud hidden">
+      <div class="score-wrap">
+        <small>SKOR</small>
+        <strong id="score">0</strong>
+      </div>
+      <button id="pauseBtn" class="icon-btn">Ⅱ</button>
+    </section>
+
+    <section id="pause" class="screen overlay hidden">
+      <div class="card dialog">
+        <h2>GAME DIJEDA</h2>
+        <p>Tarik napas dulu 😄</p>
+        <button id="resumeBtn" class="btn primary">▶ LANJUT</button>
+        <button id="pauseHomeBtn" class="btn blue">⌂ MENU</button>
+      </div>
+    </section>
+
+    <section id="gameOver" class="screen overlay hidden">
+      <div class="card dialog">
+        <div class="over-title">GAME OVER</div>
+        <div id="resultName" class="muted"></div>
+        <div class="results">
+          <div><small>SKOR</small><strong id="finalScore">0</strong></div>
+          <div><small>BEST</small><strong id="bestScore">0</strong></div>
+        </div>
+        <div id="medal" class="medal"></div>
+        <button id="againBtn" class="btn primary">↻ MAIN LAGI</button>
+        <button id="overHomeBtn" class="btn blue">⌂ MENU UTAMA</button>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="screen overlay hidden">
+      <div class="card dialog leaderboard">
+        <h2>🏆 LEADERBOARD</h2>
+        <div id="leaderList"></div>
+        <button id="clearScoresBtn" class="btn danger">RESET SKOR</button>
+        <button id="leaderHomeBtn" class="btn blue">⌂ KEMBALI</button>
+      </div>
+    </section>
+
+    <section id="how" class="screen overlay hidden">
+      <div class="card dialog">
+        <h2>CARA BERMAIN</h2>
+        <div class="instructions">
+          <div>🖱️ <b>Klik</b> layar untuk terbang</div>
+          <div>⌨️ <b>Spasi</b> / ↑ untuk terbang</div>
+          <div>📱 <b>Tap</b> layar di HP</div>
+          <div>🟢 Lewati pipa untuk mendapat skor</div>
+          <div>💥 Jangan menabrak pipa atau tanah</div>
+          <div>📈 Makin tinggi skor, makin sulit</div>
+        </div>
+        <button id="howCloseBtn" class="btn primary">SIAP!</button>
+      </div>
+    </section>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
